@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   handle_err.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/06/10 20:49:46 by hbenaddi         ###   ########.fr       */
+/*   Created: 2024/04/18 18:54:22 by hbenaddi          #+#    #+#             */
+/*   Updated: 2024/06/10 20:52:03 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdbool.h>
-# include <limits.h>
-# include "./lib/libft.h"
-
-typedef struct s_stack
+void    check_arg(int ac)
 {
-    int num;
-    int index;
+    if (ac == 1)
+    {
+        printf("Error\n");
+        return ;
+    }
+}
+void    check_int(char **av)
+{
+    int i;
 
-    struct s_stack  *target;
-    struct s_stack  *next;
-    struct s_stack  *prev;
-}             t_stack;
-
-void    check_int(char **av);
-void    check_arg(int ac);
-
-#endif
+    while (av[i])
+    {
+        if (ft_isdigit(av[i]) == 0)
+        {
+            printf("Error we only accept numeric arg\n");
+            return ;
+        }
+        printf("ok");
+        i++;
+    }
+}

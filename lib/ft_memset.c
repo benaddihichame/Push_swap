@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 18:54:22 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/06/10 19:10:56 by hbenaddi         ###   ########.fr       */
+/*   Created: 2023/10/17 14:51:52 by hbenaddi          #+#    #+#             */
+/*   Updated: 2023/11/04 17:01:34 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void    check_arg(int ac)
+void	*ft_memset(void *b, int c, size_t len)
 {
-    if (ac == 1)
-    {
-        ft_printf("Error\n");
-        return (0);
-    }
-}
-void    check_int(char **av)
-{
-    int i;
+	unsigned char	*tmp_ptr;
 
-    while (av[i])
-    {
-        if (av[i] != "0123456789")
-        {
-            ft_printf("Error we only accept numeric arg\n");
-            return ;
-        }
-        i++;
-    }
+	tmp_ptr = (unsigned char *) b;
+	while (len > 0)
+	{
+		*(tmp_ptr++) = (unsigned char) c;
+		len--;
+	}
+	return (b);
 }

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 02:06:37 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/06/10 15:41:26 by hbenaddi         ###   ########.fr       */
+/*   Created: 2023/10/17 14:51:58 by hbenaddi          #+#    #+#             */
+/*   Updated: 2024/06/10 20:46:38 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_stack    *insert_int(t_stack sort)
+int	ft_isdigit(int c)
 {
-    t_stack *new;
-
-    new = malloc(sizeof(t_stack));
-}
-int main(int ac, char **av)
-{
-    t_stack a;
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
