@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/06/10 15:33:37 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:05:55 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,17 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
+# include <limits.h>
 
 typedef struct s_stack
 {
-    int     num;
+    int num;
+    int index;
+
+    struct s_stack  *target;
     struct s_stack  *next;
+    struct s_stack  *prev;
 }             t_stack;
 
 #endif
