@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_err.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:22 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/06/10 20:52:03 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/06/10 22:00:11 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,24 @@ void    check_arg(int ac)
         return ;
     }
 }
-void    check_int(char **av)
+int    check_int(char *str)
 {
     int i;
 
-    while (av[i])
+    i = 0;
+    if (str[i] == '-' || str[i] == '+')
+        i++;
+    if (str[i] == '\0')
+        return (0);
+    while (str[i])
     {
-        if (ft_isdigit(av[i]) == 0)
+        if (ft_isdigit(str[i]) == 0)
         {
             printf("Error we only accept numeric arg\n");
-            return ;
+            return (0);
         }
-        printf("ok");
         i++;
     }
+    return (1);
 }
+

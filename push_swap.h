@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/06/10 20:49:46 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/06/10 21:40:11 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdbool.h>
 # include <limits.h>
+# include <ctype.h>
 # include "./lib/libft.h"
 
 typedef struct s_stack
