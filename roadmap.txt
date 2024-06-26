@@ -1,0 +1,98 @@
+Pour réaliser ce projet "push_swap" en 5 jours, je vais diviser le plan en plusieurs étapes. Chaque jour, vous allez effectuer une série de tâches spécifiques qui vous permettront de progresser efficacement. Voici un plan détaillé :
+
+### Jour 1 : Préparation des Fondamentaux
+
+**Objectifs :** 
+- Comprendre les besoins de base et préparer l’environnement de travail.
+- Implémenter des fonctions de vérification et de gestion des erreurs.
+
+**Tâches :**
+1. **Lecture et compréhension du projet :**
+   - Lisez attentivement l'énoncé du projet "push_swap".
+   - Prenez des notes sur les exigences et les contraintes du projet.
+
+2. **Configuration de l’environnement :**
+   - Assurez-vous que votre environnement de développement est correctement configuré (compilateur, éditeur de code, etc.).
+   - Créez un dépôt Git pour gérer vos versions.
+
+3. **Implémentation des vérifications de base :**
+   - Vérification des arguments (check_int, check_arg).
+   - Fonction de conversion (ft_atol).
+   - Comptez le nombre d'arguments (count_args).
+
+4. **Testez vos fonctions :**
+   - Créez des scénarios de test pour vérifier que vos fonctions de vérification fonctionnent correctement.
+
+### Jour 2 : Gestion des Piles et Allocation Dynamique
+
+**Objectifs :** 
+- Mettre en place la structure de données pour les piles.
+- Gérer l'allocation dynamique des piles.
+
+**Tâches :**
+1. **Structures et allocation :**
+   - Définissez la structure `t_stack` dans votre fichier d’en-tête.
+   - Créez et initialisez les piles A et B (space_for_stack, init).
+
+2. **Gestion des piles :**
+   - Implémentez des fonctions pour initialiser et manipuler les éléments des piles.
+   - Assurez-vous que les piles sont correctement liées (next, prev).
+
+3. **Testez l’allocation :**
+   - Testez l’allocation dynamique pour différentes tailles de piles.
+   - Assurez-vous qu'il n'y a pas de fuites de mémoire.
+
+### Jour 3 : Implémentation des Opérations de Base
+
+**Objectifs :** 
+- Implémenter les opérations de base de manipulation des piles (sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr).
+
+**Tâches :**
+1. **Opérations Push et Swap :**
+   - Implémentez les fonctions de swap (sa, sb, ss).
+   - Implémentez les fonctions de push (pa, pb).
+
+2. **Opérations Rotate et Reverse Rotate :**
+   - Implémentez les fonctions de rotate (ra, rb, rr).
+   - Implémentez les fonctions de reverse rotate (rra, rrb, rrr).
+
+3. **Testez les opérations :**
+   - Créez des scénarios de test pour chaque opération afin de s'assurer qu'elles fonctionnent correctement.
+   - Vérifiez les modifications des piles après chaque opération.
+
+### Jour 4 : Algorithmes de Tri
+
+**Objectifs :** 
+- Concevoir et implémenter les algorithmes de tri pour résoudre le problème.
+
+**Tâches :**
+1. **Petit nombre d’éléments :**
+   - Implémentez un algorithme de tri efficace pour des petits ensembles (environ 3-5 éléments).
+
+2. **Grand nombre d’éléments :**
+   - Choisissez et implémentez un ou plusieurs algorithmes de tri efficaces pour de plus grands ensembles (par exemple, tri rapide, tri par insertion).
+
+3. **Vérification et optimisation :**
+   - Vérifiez les performances de vos algorithmes.
+   - Optimisez votre code pour réduire le nombre d'opérations nécessaires.
+
+### Jour 5 : Tests et Finalisation
+
+**Objectifs :** 
+- Effectuer des tests complets et corriger les bugs.
+- Compléter la documentation.
+
+**Tâches :**
+1. **Tests intensifs :**
+   - Testez vos algorithmes avec différents scénarios et tailles de piles.
+   - Corrigez les bugs trouvés et améliorez les performances si nécessaire.
+
+2. **Commentaires et documentation :**
+   - Commentez votre code pour en faciliter la compréhension.
+   - Rédigez une documentation expliquant le fonctionnement de votre programme.
+
+3. **Finalisation et livraison :**
+   - Assurez-vous que votre dépôt Git est à jour et bien organisé.
+   - Préparez les fichiers pour la livraison selon les consignes du projet (Makefile, README, etc.).
+
+En suivant ce plan, vous devriez être en mesure de boucler le projet "push_swap" en 5 jours de manière méthodique et organisée. Bonne chance !
