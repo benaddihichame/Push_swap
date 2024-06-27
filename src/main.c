@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 02:06:37 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/06/15 17:45:19 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/06/27 14:14:18 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,14 @@
 // }
 int main(int ac, char **av)
 {
-    int i = 1;
+    t_stack *a;
+    t_stack *b;
+    int i;
     char **tmp;
 
+    a = NULL;
+    b = NULL;
+    i = 1;
     tmp = NULL;
     if (check_arg(ac) == 1)
         return (1);
