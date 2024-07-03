@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/06/15 17:46:12 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/02 16:37:09 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 #define RRB "rrb\n"
 #define RRR "rrr\n"
 
+//                           STRUCT
 typedef struct s_stack
 {
     int num;
@@ -42,7 +43,25 @@ typedef struct s_stack
     struct s_stack  *prev;
 }             t_stack;
 
+long ft_atol(const char *s);
+
+//                              CHECKING
+int check_double(int ac, char **av);
+int count_args(int ac, char **av);
 int    check_int(char *str);
 int   check_arg(int ac);
+
+//                              PUSH
+void    pa(t_stack **a, t_stack **b, bool print);
+void    pb(t_stack **a, t_stack **b, bool print);
+
+//                              ROTATE
+
+
+//                              SWAP
+void    sa(t_stack *a, bool print);
+void    sb(t_stack *b, bool print);
+void    ss(t_stack *a, t_stack *b, bool print);
+
 
 #endif

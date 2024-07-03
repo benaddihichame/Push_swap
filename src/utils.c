@@ -3,30 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 21:35:38 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/06/27 14:15:26 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/02 16:10:01 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-int count_args(int ac, char **av)
-{
-    int i;
-    int count;
-
-    i = 1;
-    count = 0;
-    while (i < ac)
-    {
-        if (check_int(av[i]) == 1)
-            count++;
-        i++;
-    }
-    return (count);
-}
 
 void    space_for_stack(int ac , char **av)
 {
@@ -58,7 +42,7 @@ void    init(t_stack *quandel)
     b[0].target = 0;
 }
 
-static long ft_atol(const char *s)
+long ft_atol(const char *s)
 {
     long result;
     int sign;
