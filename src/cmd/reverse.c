@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:22:37 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/03 15:19:11 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/04 13:50:01 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void reverse(t_stack **stack)
 {
     if (!stack || !*stack || (*stack)->next == NULL)
-        return (NULL);
+        return ;
     t_stack *prev;
     t_stack *last;
 
@@ -33,19 +33,19 @@ static void reverse(t_stack **stack)
         *stack = last;
     }
 }
-void    rra(t_stack *a, bool print)
+void    rra(t_stack **a, bool print)
 {
     reverse(a);
     if (print)
         ft_printf("rra\n");
 }
-void    rrb(t_stack *b, bool print)
+void    rrb(t_stack **b, bool print)
 {
     reverse(b);
     if (print)
         ft_printf("rrb\n");
 }
-void    rrr(t_stack *a, t_stack *b, bool print)
+void    rrr(t_stack **a, t_stack **b, bool print)
 {
     reverse(a);
     reverse(b);

@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:22 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/02 17:33:36 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/10 15:08:28 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int    check_arg(int ac)
 {
     if (ac == 1)
     {
-        printf("Error\n");
+        printf("Error wrong number of arg\n");
         return (1);
     }
     else
@@ -56,28 +56,6 @@ int count_args(int ac, char **av)
         i++;
     }
     return (count);
-}
-long ft_atol(const char *s)
-{
-    long result;
-    int sign;
-
-    result = 0;
-    sign = 1;
-    while (*s == ' ' || *s == '\t' || *s == '\n' || *s == '\r' || *s == '\v' || *s == '\f')
-        s++;
-    if (*s == '+' || *s == '-')
-    {
-        if (sign == '-')
-            sign = -1;
-        s++;
-    }
-    while (ft_isdigit(*s))
-    {
-        result = result * 10 + (*s - '0');
-        s++;
-    }
-    return (result * sign);
 }
 int check_double(int ac, char **av)
 {

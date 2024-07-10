@@ -6,13 +6,13 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:17:15 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/03 16:10:47 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/04 13:50:05 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-static void push(t_stack **dst, t_stack **src)
+void push(t_stack **dst, t_stack **src)
 {
     t_stack     *need_pushe_node;
 

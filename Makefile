@@ -6,7 +6,7 @@
 #    By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 20:30:15 by hbenaddi          #+#    #+#              #
-#    Updated: 2024/07/02 16:37:19 by hbenaddi         ###   ########.fr        #
+#    Updated: 2024/07/03 19:06:43 by hbenaddi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ NAME = push_swap
 SRC_DIR = src
 OBJ_DIR = obj
 
-SRCS = $(SRC_DIR)/handle_err.c $(SRC_DIR)/main.c
-OBJS = $(OBJ_DIR)/handle_err.o $(OBJ_DIR)/main.o
+SRCS = $(SRC_DIR)/handle_err.c  $(SRC_DIR)/reverse.c $(SRC_DIR)/rotate.c $(SRC_DIR)/push.c $(SRC_DIR)/swap.c $(SRC_DIR)/main.c
+OBJS = $(OBJ_DIR)/handle_err.o  $(OBJ_DIR)/reverse.o $(OBJ_DIR)/rotate.o $(OBJ_DIR)/push.o $(OBJ_DIR)/swap.o $(OBJ_DIR)/main.o 
 
 LIBFT_DIR = lib
 LIBFT = $(LIBFT_DIR)/libft.a
