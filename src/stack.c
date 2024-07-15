@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 19:10:11 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/10 15:41:30 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/15 14:09:20 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,16 @@ static void add_node(t_stack **stack, int n)
         node->prev = last;
     }
 }
+
+void sort(t_stack *stack)
+{
+    if(!stack)
+        return;
+    while(stack)
+    {
+        
+    }
+}
 void    init_stack(t_stack **a, char **argv)
 {
     long    n;
@@ -46,4 +56,9 @@ void    init_stack(t_stack **a, char **argv)
     {
         
     }
+}
+
+void    three_a(t_stack *a)
+{
+    
 }

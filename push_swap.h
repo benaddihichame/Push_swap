@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/10 15:35:11 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/15 12:45:54 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ typedef struct s_stack
     struct s_stack  *prev;
 }             t_stack;
 
+//                  RANDOM STUFF
 long ft_atol(const char *s);
 t_stack *search_last(t_stack *stack);
-
+int mod_len(t_stack *node);
 
 //                              CHECKING
 int check_double(int ac, char **av);

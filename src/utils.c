@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 21:35:38 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/10 15:50:25 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/15 12:45:27 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,19 @@ bool    stack_sorted(t_stack *stack)
         stack = stack->next;
     }
     return (true);
+}
+
+int mod_len(t_stack *node)
+{
+    int i;
+
+    if(!node)
+        return (0);
+    i = 0;
+    while(node)
+    {
+        node = node->next;
+        i++;
+    }
+    return (i);
 }
