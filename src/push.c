@@ -6,11 +6,11 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:17:15 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/04 13:50:05 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/15 14:34:08 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 void push(t_stack **dst, t_stack **src)
 {

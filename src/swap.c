@@ -6,11 +6,11 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 12:01:06 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/04 13:49:56 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/16 13:39:11 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 static void swapp(t_stack **stack)
 {
@@ -21,22 +21,22 @@ static void swapp(t_stack **stack)
     (**stack).num = (**stack).next->num;
     (**stack).next->num = tmp;
 }
-void    sa(t_stack *a, bool print)
+void    sa(t_stack **a, bool print)
 {
-    swapp(&a);
+    swapp(a);
     if(print)
         ft_printf("sa\n");
 }
-void    sb(t_stack *b, bool print)
+void    sb(t_stack **b, bool print)
 {
-    swapp(&b);
+    swapp(b);
     if(print)
         ft_printf("sb\n");
 }
-void    ss(t_stack *a, t_stack *b, bool print)
+void    ss(t_stack **a, t_stack **b, bool print)
 {
-    swapp(&a);
-    swapp(&b);
+    swapp(a);
+    swapp(b);
     if(print)
         ft_printf("ss\n");
 }

@@ -6,11 +6,11 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:55:36 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/04 13:49:54 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/15 14:34:16 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 static void rotate(t_stack **stack)
 {
