@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   search.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 14:45:34 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/16 15:36:54 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/28 16:25:19 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,35 @@ t_stack *search_last(t_stack *stack)
     while(stack->next)
         stack = stack->next;
     return(stack);
+}
+void    search_cost(t_stack *a, t_stack *b)
+{
+    int len_a;
+    int len_b;
+
+    len_a = mod_len(a);
+    len_b = mod_len(b);
+    while(b)
+    {
+        b->push_cost = b->position;
+        if(!b->above_med)
+            b->push_cost = len_b - (b->position);
+        if(b->target->above_med)
+            b->push_cost += b->target->position;
+        else
+            b->push_cost += len_a - (b->target->position);
+        b = b->next;
+    }
+}
+
+void    search_target_node(t_stack *a, t_stack *b)
+{
+    t_stack *pos_a;
+    t_stack *target_node;
+    long    best_index;
+
+    while(b)
+    {
+        
+    }
 }

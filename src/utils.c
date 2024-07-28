@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 21:35:38 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/17 00:39:27 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/07/28 15:41:20 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,23 +60,4 @@ int mod_len(t_stack *node)
         i++;
     }
     return (i);
-}
-void    search_cost(t_stack *a, t_stack *b)
-{
-    int len_a;
-    int len_b;
-
-    len_a = mod_len(a);
-    len_b = mod_len(b);
-    while(b)
-    {
-        b->push_cost = b->position;
-        if(!b->above_med)
-            b->push_cost = len_b - (b->position);
-        if(b->target->above_med)
-            b->push_cost += b->target->position;
-        else
-            b->push_cost += len_a - (b->target->position);
-        b = b->next;
-    }
 }
