@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 19:10:11 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/16 15:36:49 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:09:04 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,7 @@ void sort(t_stack *stack)
         
     }
 }
-void    target_node(t_stack *a, t_stack *b)
-{
-    
-}
+
 void    three_node(t_stack **a)
 {
     t_stack *max;
