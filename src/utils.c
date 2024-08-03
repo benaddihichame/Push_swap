@@ -61,3 +61,20 @@ int mod_len(t_stack *node)
     }
     return (i);
 }
+
+void    free_all(t_stack **stack)
+{
+    t_stack *memo;
+    t_stack *curr;
+    
+    curr = *stack;
+    if(!stack)
+        return;
+    while(curr)
+    {
+        memo = curr->next;
+        free(curr);
+        curr = memo;
+    }
+    *stack = NULL;
+}
