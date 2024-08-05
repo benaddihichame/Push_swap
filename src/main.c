@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 02:06:37 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/16 15:24:17 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/05 15:01:15 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ void init_stack(t_stack **a, char **av)
     while(av[i])
     {
         num = ft_atol(av[i]);
+        if(num > INT_MAX || num < INT_MIN)
+        {
+            free_all(a);
+        }
         add_node(a, (int)num);
         i++;
     }

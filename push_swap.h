@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/16 15:56:08 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/05 15:22:35 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct s_stack
 long ft_atol(const char *s);
 int mod_len(t_stack *node);
 void    three_node(t_stack **a);
+void    free_all(t_stack **stack);
+void init_stack(t_stack **a, char **av);
 
 //                              CHECKING
 int check_double(int ac, char **av);
@@ -70,5 +72,8 @@ void    ss(t_stack **a, t_stack **b, bool print);
 t_stack *search_max(t_stack *stack);
 t_stack *search_min(t_stack *stack);
 t_stack *search_last(t_stack *stack);
+void    search_target_node(t_stack *a, t_stack *b);
+void    search_cost(t_stack *a, t_stack *b);
+
 
 #endif
