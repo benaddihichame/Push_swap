@@ -37,13 +37,14 @@ long ft_atol(const char *s)
 int mod_len(t_stack *node)
 {
     int i;
+    t_stack *tmp;
 
     if(!node)
         return (0);
     i = 0;
-    while(node)
+    while(tmp)
     {
-        node = node->next;
+        tmp = tmp->next;
         i++;
     }
     return (i);

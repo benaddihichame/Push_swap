@@ -16,14 +16,14 @@ int main(int ac, char **av)
 {
     t_stack *a;
     t_stack *b;
-    char **tmp;
+
     
     a = NULL;
     b = NULL;
     if (big_check(ac, av) == 0)
              return (1);
     init_stack(&a, av);
-    if (stack_sorted(a) == false)
+    if (stack_sorted(&a) == false)
     {
         if (mod_len(a) == 2)
             sa(&a);

@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int init_stack(t_stack **a, char **av)
+void init_stack(t_stack **a, char **av)
 {
     long num;
     int i = 1;
@@ -29,15 +29,17 @@ int init_stack(t_stack **a, char **av)
     }
 }
 
-bool    stack_sorted(t_stack *box)
+bool    stack_sorted(t_stack **box)
 {
     if(!box)
-        return (1);
-    while(box->next != NULL)
+        return (false);
+    t_stack *tmp;
+    tmp = *box;
+    while(tmp->next != NULL)
     {
-        if(box->num > box->next->num)
+        if(tmp->num > tmp->next->num)
             return (false);
-        box = box->next;
+        tmp = tmp->next;
     }
     return (true);
 }

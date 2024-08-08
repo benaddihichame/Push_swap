@@ -60,33 +60,12 @@ t_stack *search_cheapest(t_stack **a, t_stack **b)
     t_stack *tmp;
     int minus_cost;
 
-    tmp = a;
+    cheapest_box = NULL;
+    tmp = *a;
     minus_cost = INT_MAX;
     while(tmp)
     {
-        calcul_distance(cheapest_box, a, b);
-        if(tmp->push_cost < minus_cost)
-        {
-            minus_cost = tmp->push_cost;
-            cheapest_box = tmp;
-        }
-        if(cheapest_box->push_cost == 1)
-            return(cheapest_box);
-        tmp = tmp->next;
-    }
-    return(cheapest_box);
-}
-t_stack *search_cheapest(t_stack **a, t_stack **b)
-{
-    t_stack *cheapest_box;
-    t_stack *tmp;
-    int minus_cost;
-
-    tmp = a;
-    minus_cost = INT_MAX;
-    while(tmp)
-    {
-        calcul_distance(cheapest_box, a, b);
+        calcul_distance(tmp, a, b);
         if(tmp->push_cost < minus_cost)
         {
             minus_cost = tmp->push_cost;

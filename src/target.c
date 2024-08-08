@@ -19,7 +19,7 @@ t_stack *search_target(t_stack *box, t_stack *b)
 
     b_max = search_max(box);
     b_min = search_min(box);
-    if(box->num > b_max)
+    if(box->num > b_max->num)
         return (b_max);
     if(box->num < b_min->num)
         return(b_max);
@@ -49,7 +49,8 @@ int find_push_cost(int position, t_stack **box)
 {
     int size;
 
-    size = mod_len(box);
+    size = mod_len(*box);
+    printf("%d", size);
     if(position > size / 2)
         return (size - position);
     else
@@ -62,23 +63,27 @@ void    calcul_distance(t_stack *a_box, t_stack **a, t_stack **b)
 
     tmp = *a;
     index = 0;
-    a_box->target = search_target(a_box, b);
+    a_box->target = search_target(a_box, *b);
+    // printf("bonjour\n");
+    // printf("bonjour %p %d\n", a_box->target, a_box->target->num);
     while(tmp)
-    {
-        tmp->position = index++;
-        if(tmp = a_box)
-            break;
-        tmp = tmp->next;
-    }
-    a_box->push_cost = find_push_cost(tmp->position, b);
-    tmp = *b;
-    while (tmp)
     {
         tmp->position = index++;
         if(tmp == a_box)
             break;
         tmp = tmp->next;
     }
+    a_box->push_cost = find_push_cost(tmp->position, a);
+    tmp = *b;
+    index = 0;
+    while (tmp)
+    {
+        tmp->position = index++;
+        if(tmp == a_box->target)
+            break;
+        tmp = tmp->next;
+    }
+    // printf("bonjour %p\n", tmp);
     a_box->push_cost += find_push_cost(tmp->position, b) + 1;
 }
 t_stack *find_a_target(t_stack *box, t_stack **a)
@@ -95,12 +100,12 @@ t_stack *find_a_target(t_stack *box, t_stack **a)
         if(tmp->num - box->num < diff && tmp->num - box->num > 0)
         {
             diff = tmp->num - box->num;
-            if(diff = 1)
+            if(diff == 1)
                 break;
         }
         tmp = tmp->next;
     }
     if(!minimum_target)
-        minimum_target = search_min(a);
+        minimum_target = search_min(*a);
     return(minimum_target);
 }

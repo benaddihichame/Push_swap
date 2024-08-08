@@ -41,13 +41,14 @@ void    free_all(t_stack **box);
 void    init_stack(t_stack **a, char **av);
 void    add_node(t_stack **box, int n);
 void    algo(t_stack **a, t_stack **b);
+t_stack *find_a_target(t_stack *box, t_stack **a);
 
 //                              CHECKING
 int check_double(int ac, char **av);
 int count_args(int ac, char **av);
 int check_int(char *str);
 int check_arg(int ac);
-bool    stack_sorted(t_stack *box);
+bool    stack_sorted(t_stack **box);
 int big_check(int ac, char **av);
 
 //                              PUSH
@@ -80,6 +81,5 @@ t_stack *if_target_mid(t_stack *box, t_stack *b);
 int find_push_cost(int position, t_stack **box);
 t_stack *search_cheapest(t_stack **a, t_stack **b);
 void    calcul_distance(t_stack *a_box, t_stack **a, t_stack **b);
-
-
+t_stack *search_cheapest(t_stack **a, t_stack **b);
 #endif

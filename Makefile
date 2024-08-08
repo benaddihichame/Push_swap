@@ -27,6 +27,7 @@ SRCS = $(SRC_DIR)/handle_err.c \
 			$(SRC_DIR)/algo.c \
 			$(SRC_DIR)/stack.c \
 			$(SRC_DIR)/utils.c \
+			$(SRC_DIR)/target.c \
 
 
 
@@ -39,7 +40,8 @@ OBJS = $(OBJ_DIR)/handle_err.o \
 			$(OBJ_DIR)/search.o \
 			$(OBJ_DIR)/algo.o \
 			$(OBJ_DIR)/stack.o \
-			$(OBJ_DIR)/utils.o
+			$(OBJ_DIR)/utils.o \
+			$(OBJ_DIR)/target.o
 
 
 
