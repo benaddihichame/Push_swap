@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   1rotate.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:55:36 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/15 14:34:16 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/06 21:04:17 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,21 @@ static void rotate(t_stack **stack)
     first->next = NULL;
 }
 
-void ra(t_stack **a, bool print)
+void ra(t_stack **a)
 {
     rotate(a);
-    if (print)
-        printf("ra\n");
+    printf("ra\n");
 }
 
-void rb(t_stack **b, bool print)
+void rb(t_stack **b)
 {
     rotate(b);
-    if (print)
-        printf("rb\n");
+    printf("rb\n");
 }
 
-void rr(t_stack **a, t_stack **b, bool print)
+void rr(t_stack **a, t_stack **b)
 {
     rotate(a);
     rotate(b);
-    if (print)
-        printf("rr\n");
+    printf("rr\n");
 }

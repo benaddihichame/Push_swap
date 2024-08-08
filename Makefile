@@ -6,7 +6,7 @@
 #    By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 20:30:15 by hbenaddi          #+#    #+#              #
-#    Updated: 2024/07/15 18:27:09 by hbenaddi         ###   ########.fr        #
+#    Updated: 2024/08/06 13:53:19 by hbenaddi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,21 +19,26 @@ CMD_DIR = cmd
 
 SRCS = $(SRC_DIR)/handle_err.c \
 			$(SRC_DIR)/main.c \
-			$(SRC_DIR)/reverse.c \
-			$(SRC_DIR)/rotate.c \
-			$(SRC_DIR)/push.c \
-			$(SRC_DIR)/swap.c \
+			$(SRC_DIR)/3reverse.c \
+			$(SRC_DIR)/1rotate.c \
+			$(SRC_DIR)/2push.c \
+			$(SRC_DIR)/4swap.c \
 			$(SRC_DIR)/search.c \
-			$(SRC_DIR)/utils.c
+			$(SRC_DIR)/algo.c \
+			$(SRC_DIR)/stack.c \
+			$(SRC_DIR)/utils.c \
+
 
 
 OBJS = $(OBJ_DIR)/handle_err.o \
-			$(OBJ_DIR)/reverse.o \
-			$(OBJ_DIR)/rotate.o \
-			$(OBJ_DIR)/push.o \
-			$(OBJ_DIR)/swap.o \
+			$(OBJ_DIR)/3reverse.o \
+			$(OBJ_DIR)/1rotate.o \
+			$(OBJ_DIR)/2push.o \
+			$(OBJ_DIR)/4swap.o \
 			$(OBJ_DIR)/main.o \
 			$(OBJ_DIR)/search.o \
+			$(OBJ_DIR)/algo.o \
+			$(OBJ_DIR)/stack.o \
 			$(OBJ_DIR)/utils.o
 
 

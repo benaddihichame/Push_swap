@@ -8,6 +8,9 @@
         "variant": "c",
         "vector": "c",
         "__tuple": "c",
-        "chrono": "c"
+        "chrono": "c",
+        "stack": "c",
+        "__node_handle": "c",
+        "regex": "c"
     }
 }

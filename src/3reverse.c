@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse.c                                          :+:      :+:    :+:   */
+/*   3reverse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:22:37 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/15 14:37:30 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/06 21:05:12 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,19 @@ static void reverse(t_stack **stack)
         *stack = last;
     }
 }
-void    rra(t_stack **a, bool print)
+void    rra(t_stack **a)
 {
     reverse(a);
-    if (print)
-        ft_printf("rra\n");
+    ft_printf("rra\n");
 }
-void    rrb(t_stack **b, bool print)
+void    rrb(t_stack **b)
 {
     reverse(b);
-    if (print)
-        ft_printf("rrb\n");
+    ft_printf("rrb\n");
 }
-void    rrr(t_stack **a, t_stack **b, bool print)
+void    rrr(t_stack **a, t_stack **b)
 {
     reverse(a);
     reverse(b);
-    if (print)
-        ft_printf("rrr\n");
+    ft_printf("rrr\n");
 }

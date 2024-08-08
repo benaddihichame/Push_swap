@@ -6,100 +6,64 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 19:10:11 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/05 16:30:20 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/07 16:12:32 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+int init_stack(t_stack **a, char **av)
+{
+    long num;
+    int i = 1;
+    
+    while(av[i])
+    {
+        num = ft_atol(av[i]);
+        if(num > INT_MAX || num < INT_MIN)
+        {
+            free_all(a);
+        }
+        add_node(a, (int)num);
+        i++;
+    }
+}
+
+bool    stack_sorted(t_stack *box)
+{
+    if(!box)
+        return (1);
+    while(box->next != NULL)
+    {
+        if(box->num > box->next->num)
+            return (false);
+        box = box->next;
+    }
+    return (true);
+}
+
 // ajoute un nouveau cube a la fin de la pile ou le met en premier
-static void add_node(t_stack **stack, int n)
+void add_node(t_stack **box, int n)
 {
     t_stack *node;
     t_stack *last;
 
-    if(!stack)
+    if(!box)
         return;
     node = malloc(sizeof(t_stack));
     if(!node)
         return;
     node->next = NULL;
     node->num = n;
-    if(!(*stack))
+    if(!(*box))
     {
-        *stack = node;
+        *box = node;
         node->prev = NULL;
     }
     else
     {
-        last = search_last(*stack);
+        last = search_last(*box);
         last->next = node;
         node->prev = last;
     }
-}
-void    set_midle(t_stack *stack)
-{
-    int i;
-    int mid;
-
-    i = 0;
-    if(!stack)
-        return ;
-    mid = mod_len(stack) / 2;
-    while (stack)
-    {
-        stack->position = i;
-        if(i < mid)
-            stack->above_med = true;
-        else
-            stack->above_med = false;
-        stack = stack->next;
-    }
-}
-void    prep_algo(t_stack *a, t_stack *b)
-{
-    set_midle(a);
-    set_midle(b);
-    search_target_node(a, b);
-    search_cost(a, b);
-    search_cheap();
-}
-void sort(t_stack **a, t_stack **b)
-{
-    int len_a;
-
-    len_a = mod_len(*a);
-    if (len_a > 3 && !stack_sorted(a))
-    {
-        pb(a, b, true);
-        len_a--;
-    }
-    if (len_a > 3 && !stack_sorted(a))
-    {
-        pb(a, b, true);
-        len_a--;
-    }
-    while (len_a > 3 && !stack_sorted(a))
-    {
-        prep_algo(*a, *b);
-        //create function to move b to a 
-        len_a--;
-    }
-    three_node(a);
-    search_target_node(a, b);
-    //fonction pour above_mediane
-    search_cost(a, b);
-}
-
-void    three_node(t_stack **a)
-{
-    t_stack *max;
-
-    max = search_max(*a);
-    if(max == *a)
-        ra(a, true);
-    else if((*a)->next == max)
-        rra(a, true);
-    if((*a)->num > (*a)->next->num)
-        sa(a, true);
 }

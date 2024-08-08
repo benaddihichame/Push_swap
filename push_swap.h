@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/05 15:22:35 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/08 12:09:13 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,43 +37,49 @@ typedef struct s_stack
 long ft_atol(const char *s);
 int mod_len(t_stack *node);
 void    three_node(t_stack **a);
-void    free_all(t_stack **stack);
-void init_stack(t_stack **a, char **av);
+void    free_all(t_stack **box);
+void    init_stack(t_stack **a, char **av);
+void    add_node(t_stack **box, int n);
+void    algo(t_stack **a, t_stack **b);
 
 //                              CHECKING
 int check_double(int ac, char **av);
 int count_args(int ac, char **av);
 int check_int(char *str);
 int check_arg(int ac);
-bool    stack_sorted(t_stack *stack);
+bool    stack_sorted(t_stack *box);
 int big_check(int ac, char **av);
 
 //                              PUSH
-void    pa(t_stack **a, t_stack **b, bool print);
-void    pb(t_stack **a, t_stack **b, bool print);
-void    push(t_stack **dst, t_stack **src);
+void    pa(t_stack **a, t_stack **b);
+void    pb(t_stack **a, t_stack **b);
 
 //                              ROTATE
-void    ra(t_stack **a, bool print);
-void    rb(t_stack **b, bool print);
-void    rr(t_stack **a, t_stack **b ,bool print);
+void    ra(t_stack **a);
+void    rb(t_stack **b);
+void    rr(t_stack **a, t_stack **b);
 
 //                              REVERSE
-void    rra(t_stack **a, bool print);
-void    rrb(t_stack **b, bool print);
-void    rrr(t_stack **a, t_stack **b, bool print);
+void    rra(t_stack **a);
+void    rrb(t_stack **b);
+void    rrr(t_stack **a, t_stack **b);
 
 //                              SWAP
-void    sa(t_stack **a, bool print);
-void    sb(t_stack **b, bool print);
-void    ss(t_stack **a, t_stack **b, bool print);
+void    sa(t_stack **a);
+void    sb(t_stack **b);
+void    ss(t_stack **a, t_stack **b);
 
 //                                  SEARCH
-t_stack *search_max(t_stack *stack);
-t_stack *search_min(t_stack *stack);
-t_stack *search_last(t_stack *stack);
-void    search_target_node(t_stack *a, t_stack *b);
+t_stack *search_max(t_stack *box);
+t_stack *search_min(t_stack *box);
+t_stack *search_last(t_stack *box);
+t_stack *find_a_target(t_stack *box, t_stack **a);
 void    search_cost(t_stack *a, t_stack *b);
+t_stack *search_target(t_stack *box, t_stack *b);
+t_stack *if_target_mid(t_stack *box, t_stack *b);
+int find_push_cost(int position, t_stack **box);
+t_stack *search_cheapest(t_stack **a, t_stack **b);
+void    calcul_distance(t_stack *a_box, t_stack **a, t_stack **b);
 
 
 #endif

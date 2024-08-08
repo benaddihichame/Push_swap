@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 21:35:38 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/28 15:41:20 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:42:46 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,6 @@ long ft_atol(const char *s)
     }
     return (result * sign);
 }
-// regarde si la pile est dans l'ordre ou pas si le numero de la box  et plus grand que la prochaine c pas sorted
-bool    stack_sorted(t_stack *stack)
-{
-    if(!stack)
-        return (1);
-    while(stack->next != NULL)
-    {
-        if(stack->num > stack->next->num)
-            return (false);
-        stack = stack->next;
-    }
-    return (true);
-}
 int mod_len(t_stack *node)
 {
     int i;
@@ -62,13 +49,13 @@ int mod_len(t_stack *node)
     return (i);
 }
 
-void    free_all(t_stack **stack)
+void    free_all(t_stack **box)
 {
     t_stack *memo;
     t_stack *curr;
     
-    curr = *stack;
-    if(!stack)
+    curr = *box;
+    if(!box)
         return;
     while(curr)
     {
@@ -76,5 +63,13 @@ void    free_all(t_stack **stack)
         free(curr);
         curr = memo;
     }
-    *stack = NULL;
+    *box = NULL;
+}
+t_stack *search_last(t_stack *box)
+{
+    if(!box)
+        return (NULL);
+    while(box->next)
+        box = box->next;
+    return (box);
 }

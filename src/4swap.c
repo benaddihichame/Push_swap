@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   4swap.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 12:01:06 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/16 13:39:11 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/06 21:05:31 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,19 @@ static void swapp(t_stack **stack)
     (**stack).num = (**stack).next->num;
     (**stack).next->num = tmp;
 }
-void    sa(t_stack **a, bool print)
+void    sa(t_stack **a)
 {
     swapp(a);
-    if(print)
-        ft_printf("sa\n");
+    ft_printf("sa\n");
 }
-void    sb(t_stack **b, bool print)
+void    sb(t_stack **b)
 {
     swapp(b);
-    if(print)
-        ft_printf("sb\n");
+    ft_printf("sb\n");
 }
-void    ss(t_stack **a, t_stack **b, bool print)
+void    ss(t_stack **a, t_stack **b)
 {
     swapp(a);
     swapp(b);
-    if(print)
-        ft_printf("ss\n");
+    ft_printf("ss\n");
 }

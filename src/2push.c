@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   2push.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:17:15 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/07/15 14:34:08 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/08 12:09:01 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void push(t_stack **dst, t_stack **src)
+static void push(t_stack **dst, t_stack **src)
 {
     t_stack     *need_pushe_node;
 
@@ -35,16 +35,14 @@ void push(t_stack **dst, t_stack **src)
         *dst = need_pushe_node;
     }
 }
-void    pa(t_stack **a, t_stack **b, bool print)
+void    pa(t_stack **a, t_stack **b)
 {
     push(a, b);
-    if(!print)
-        ft_printf("pa\n");
+    ft_printf("pa\n");
 }
 
-void    pb(t_stack **a, t_stack **b, bool print)
+void    pb(t_stack **a, t_stack **b)
 {
     push(b, a);
-    if(!print)
-        ft_printf("pb\n");
+    ft_printf("pb\n");
 }
