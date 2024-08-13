@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:55:36 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/06 21:04:17 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/13 12:14:04 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,14 @@ void ra(t_stack **a)
 {
     rotate(a);
     printf("ra\n");
+    g_move_count++;
 }
 
 void rb(t_stack **b)
 {
     rotate(b);
     printf("rb\n");
+    g_move_count++;
 }
 
 void rr(t_stack **a, t_stack **b)
@@ -45,4 +47,5 @@ void rr(t_stack **a, t_stack **b)
     rotate(a);
     rotate(b);
     printf("rr\n");
+    g_move_count++;
 }

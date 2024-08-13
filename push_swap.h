@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/13 11:20:42 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/13 12:16:07 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef struct s_stack
     struct s_stack  *next;
     struct s_stack  *prev;
 }             t_stack;
+
+extern int g_move_count;
 
 //                  RANDOM STUFF
 long ft_atol(const char *s);
@@ -77,5 +79,5 @@ t_stack	*search_target_mid(t_stack *a_box, t_stack **b);
 t_stack	*search_target_box(t_stack *a_box, t_stack **b);
 t_stack *search_cheapest(t_stack **a, t_stack **b);
 t_stack	*search_target_to_a(t_stack *box, t_stack **a);
-
+void print_stack(t_stack **stack);
 #endif

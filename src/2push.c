@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:17:15 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/08 12:09:01 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/13 12:14:23 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,12 @@ void    pa(t_stack **a, t_stack **b)
 {
     push(a, b);
     ft_printf("pa\n");
+    g_move_count++;
 }
 
 void    pb(t_stack **a, t_stack **b)
 {
     push(b, a);
     ft_printf("pb\n");
+    g_move_count++;
 }

@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 12:17:50 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/13 11:43:18 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/13 13:02:45 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void    push_cheapest_box(t_stack **a, t_stack **b)
     cheapest_box = search_cheapest(a, b);
     middle_a = mod_len(a) / 2;
     middle_b = mod_len(b) / 2;
+    ft_printf("Cheapest box: %d\n", cheapest_box->num);
+    ft_printf("Target: %d\n", cheapest_box->target->num);
     while (*a != cheapest_box)
     {
         if(cheapest_box->position < middle_a)
