@@ -12,25 +12,25 @@
 
 #include "../push_swap.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-    t_stack *a;
-    t_stack *b;
+	t_stack	*a;
+	t_stack	*b;
 
-    a = NULL;
-    b = NULL;
-    if (big_check(ac, av) == 0)
-             return (1);
-    init_stack(&a, av);
-    if (stack_sorted(&a) == false)
-    {
-        if (mod_len(&a) == 2)
-            sa(&a);
-        else if (mod_len(&a) == 3)
-            three_node(&a);
-        else
-            algo(&a, &b);
-    }
-    free_all(&a);
-    return (0);
+	a = NULL;
+	b = NULL;
+	if (big_check(ac, av) == 0)
+		return (1);
+	init_stack(&a, av);
+	if (stack_sorted(&a) == false)
+	{
+		if (mod_len(&a) == 2)
+			sa(&a);
+		else if (mod_len(&a) == 3)
+			three_node(&a);
+		else
+			algo(&a, &b);
+	}
+	free_all(&a);
+	return (0);
 }

@@ -12,7 +12,6 @@
 
 #include "../push_swap.h"
 
-
 void	sa(t_stack **a)
 {
 	t_stack	*first;
@@ -24,7 +23,7 @@ void	sa(t_stack **a)
 	second->next = first;
 	*a = second;
 	ft_printf("sa\n");
-    }
+}
 
 void	sb(t_stack **b)
 {
@@ -38,31 +37,3 @@ void	sb(t_stack **b)
 	*b = second;
 	ft_printf("sb\n");
 }
-// static void swapp(t_stack **stack)
-// {
-//     if (!stack || !*stack || (*stack)->next == NULL)
-//         return;
-//     int tmp;
-//     tmp = (**stack).num;
-//     (**stack).num = (**stack).next->num;
-//     (**stack).next->num = tmp;
-// }
-// void    sa(t_stack **a)
-// {
-//     swapp(a);
-//     ft_printf("sa\n");
-//     g_move_count++;
-// }
-// void    sb(t_stack **b)
-// {
-//     swapp(b);
-//     ft_printf("sb\n");
-//     g_move_count++;
-// }
-// void    ss(t_stack **a, t_stack **b)
-// {
-//     swapp(a);
-//     swapp(b);
-//     ft_printf("ss\n");
-//     g_move_count++;
-// }

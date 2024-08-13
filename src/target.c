@@ -17,7 +17,7 @@ t_stack	*search_target_box(t_stack *a_box, t_stack **b)
 	t_stack	*bmax;
 	t_stack	*bmin;
 
-    if (!a_box || !b || !*b)
+	if (!a_box || !b || !*b)
 		return (NULL);
 	bmax = search_max(b);
 	bmin = search_min(b);
@@ -28,6 +28,7 @@ t_stack	*search_target_box(t_stack *a_box, t_stack **b)
 	else
 		return (search_target_mid(a_box, b));
 }
+
 t_stack	*search_target_mid(t_stack *a_box, t_stack **b)
 {
 	t_stack	*tmp;
@@ -47,6 +48,7 @@ t_stack	*search_target_mid(t_stack *a_box, t_stack **b)
 	}
 	return (target);
 }
+
 t_stack	*search_target_to_a(t_stack *box, t_stack **a)
 {
 	t_stack	*tmp;
