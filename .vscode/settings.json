@@ -11,6 +11,7 @@
         "chrono": "c",
         "stack": "c",
         "__node_handle": "c",
-        "regex": "c"
+        "regex": "c",
+        "push_swap.h": "c"
     }
 }

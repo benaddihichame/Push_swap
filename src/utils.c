@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 21:35:38 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/07 14:42:46 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/12 12:18:44 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ long ft_atol(const char *s)
     }
     return (result * sign);
 }
-int mod_len(t_stack *node)
+int mod_len(t_stack **node)
 {
     int i;
     t_stack *tmp;
 
+    tmp = *node;
     if(!node)
         return (0);
     i = 0;

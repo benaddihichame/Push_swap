@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:22:37 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/06 21:05:12 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/13 11:08:01 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ static void reverse(t_stack **stack)
 }
 void    rra(t_stack **a)
 {
-    reverse(a);
-    ft_printf("rra\n");
+   reverse(a);
+   ft_printf("rra\n");
 }
 void    rrb(t_stack **b)
 {

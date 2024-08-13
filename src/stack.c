@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 19:10:11 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/07 16:12:32 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/12 12:18:40 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ void init_stack(t_stack **a, char **av)
         i++;
     }
 }
-
 bool    stack_sorted(t_stack **box)
 {
-    if(!box)
+    if(!box || !(*box))
         return (false);
     t_stack *tmp;
     tmp = *box;
@@ -43,7 +42,6 @@ bool    stack_sorted(t_stack **box)
     }
     return (true);
 }
-
 // ajoute un nouveau cube a la fin de la pile ou le met en premier
 void add_node(t_stack **box, int n)
 {

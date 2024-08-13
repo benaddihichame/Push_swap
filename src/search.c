@@ -6,72 +6,98 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 14:45:34 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/08 12:30:10 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/13 11:20:27 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 // Recherche et retourne le nœud avec la plus petite valeur dans la pile 'stack'
-t_stack *search_min(t_stack *box)
+t_stack	*search_max(t_stack **stack)
 {
-    long    minus;
-    t_stack *minus_pos;
+	t_stack	*max;
+	t_stack	*tmp;
 
-    minus = LONG_MAX;
-    minus_pos = NULL;
-    if(!box)
-        return (NULL);
-    while(box)
-    {
-        if(box->num < minus)
-        {
-            minus_pos = box;
-            minus = box->num;
-        }
-        box = box->next;
-    }
-    return (minus_pos);
+	max = NULL;
+	tmp = *stack;
+	while (tmp)
+	{
+		if (!max || tmp->num > max->num)
+			max = tmp;
+		tmp = tmp->next;
+	}
+	return (max);
 }
 // Recherche et retourne le nœud avec la plus grande valeur dans la pile 'stack'
-t_stack *search_max(t_stack *box)
+t_stack	*search_min(t_stack **stack)
 {
-    long max;
-    t_stack *max_pos;
-   
-    if(!box)
-        return (NULL);
-    max = LONG_MIN;
-    max_pos = NULL;
-    while(box)
+	t_stack	*min;
+	t_stack	*tmp;
+
+	min = NULL;
+	tmp = *stack;
+	while (tmp)
+	{
+		if (!min || tmp->num < min->num)
+			min = tmp;
+		tmp = tmp->next;
+	}
+	return (min);
+}
+int pushcost_from_pos(int pos, t_stack **stack)
+{
+    int size;
+
+    size = mod_len(stack);
+    if (pos > size / 2)
+        return (size - pos);
+    else
+        return(pos);
+}
+void    target_and_cost(t_stack *a_box, t_stack **a, t_stack **b)
+{
+    t_stack *tmp;
+    int index;
+
+    tmp = *a;
+    index = 0;
+    a_box->target = search_target_box(a_box, b);
+    while(tmp)
     {
-        if (box->num > max)
-        {
-            max = box->num;
-            max_pos = box;
-        }
-        box = box->next;
+        tmp->position = index++;
+        if (tmp == a_box)
+            break;
+        tmp = tmp->next;
     }
-    return (max_pos);
+    a_box->push_cost = pushcost_from_pos(tmp->position, a);
+    index = 0;
+    tmp = *b;
+    while (tmp)
+    {
+        tmp->position = index++;
+        if (tmp == a_box->target)
+            break;
+        tmp = tmp->next;
+    }
+    a_box->push_cost += pushcost_from_pos(tmp->position, b) + 1;
 }
 t_stack *search_cheapest(t_stack **a, t_stack **b)
 {
-    t_stack *cheapest_box;
     t_stack *tmp;
-    int minus_cost;
+    t_stack *cheapest_box;
+    int discount;
 
-    cheapest_box = NULL;
     tmp = *a;
-    minus_cost = INT_MAX;
+    discount = INT_MAX;
     while(tmp)
     {
-        calcul_distance(tmp, a, b);
-        if(tmp->push_cost < minus_cost)
+        target_and_cost(tmp, a, b);
+        if(tmp->push_cost < discount)
         {
-            minus_cost = tmp->push_cost;
+            discount = tmp->push_cost;
             cheapest_box = tmp;
         }
-        if(cheapest_box->push_cost == 1)
+        if (cheapest_box->push_cost == 1)
             return(cheapest_box);
         tmp = tmp->next;
     }

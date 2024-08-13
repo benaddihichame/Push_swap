@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/08 12:09:13 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/13 11:20:42 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ typedef struct s_stack
 
 //                  RANDOM STUFF
 long ft_atol(const char *s);
-int mod_len(t_stack *node);
+int mod_len(t_stack **node);
 void    three_node(t_stack **a);
 void    free_all(t_stack **box);
 void    init_stack(t_stack **a, char **av);
 void    add_node(t_stack **box, int n);
 void    algo(t_stack **a, t_stack **b);
-t_stack *find_a_target(t_stack *box, t_stack **a);
+t_stack *search_last(t_stack *box);
 
 //                              CHECKING
 int check_double(int ac, char **av);
@@ -71,15 +71,11 @@ void    sb(t_stack **b);
 void    ss(t_stack **a, t_stack **b);
 
 //                                  SEARCH
-t_stack *search_max(t_stack *box);
-t_stack *search_min(t_stack *box);
-t_stack *search_last(t_stack *box);
-t_stack *find_a_target(t_stack *box, t_stack **a);
-void    search_cost(t_stack *a, t_stack *b);
-t_stack *search_target(t_stack *box, t_stack *b);
-t_stack *if_target_mid(t_stack *box, t_stack *b);
-int find_push_cost(int position, t_stack **box);
+t_stack *search_max(t_stack **stack);
+t_stack *search_min(t_stack **stack);
+t_stack	*search_target_mid(t_stack *a_box, t_stack **b);
+t_stack	*search_target_box(t_stack *a_box, t_stack **b);
 t_stack *search_cheapest(t_stack **a, t_stack **b);
-void    calcul_distance(t_stack *a_box, t_stack **a, t_stack **b);
-t_stack *search_cheapest(t_stack **a, t_stack **b);
+t_stack	*search_target_to_a(t_stack *box, t_stack **a);
+
 #endif
