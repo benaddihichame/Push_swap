@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/13 12:16:07 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/13 15:41:59 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ typedef struct s_stack
     struct s_stack  *prev;
 }             t_stack;
 
-extern int g_move_count;
 
 //                  RANDOM STUFF
 long ft_atol(const char *s);
@@ -60,7 +59,7 @@ void    pb(t_stack **a, t_stack **b);
 //                              ROTATE
 void    ra(t_stack **a);
 void    rb(t_stack **b);
-void    rr(t_stack **a, t_stack **b);
+void    rr(t_stack **b);
 
 //                              REVERSE
 void    rra(t_stack **a);
