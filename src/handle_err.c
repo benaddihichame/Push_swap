@@ -69,15 +69,19 @@ int	check_int_2(int ac, char **av)
 	}
 	return (1);
 }
+int	one(int ac)
+{
+	if (ac == 1)
+		{
+			ft_printf("Error\n");
+			return (0);
+		}
+	return (1);
+}
 
 int	big_check(int ac, char **av)
 {
-	if (ac == 1)
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
-	else if (check_double(ac, av) == 0)
+	if (check_double(ac, av) == 0)
 	{
 		ft_printf("Error2\n");
 		return (0);
