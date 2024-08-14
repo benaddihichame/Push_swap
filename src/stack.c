@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 19:10:11 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/12 12:18:40 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/14 13:36:51 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	init_stack(t_stack **a, char **av)
 	long	num;
 	int		i;
 
-	i = 1;
+	i = 0;
 	while (av[i])
 	{
 		num = ft_atol(av[i]);

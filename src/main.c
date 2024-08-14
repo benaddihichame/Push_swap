@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 02:06:37 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/13 15:41:53 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/14 13:48:23 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,12 @@ int	main(int ac, char **av)
 	if (ac == 2)
     {
         split_args = ft_split(av[1], ' ');
-		printf
         if (!split_args)
             return (1);
         init_stack(&a, split_args);
 	}
 	else
-		init_stack(&a, av);
+		init_stack(&a, av + 1);
 	if (big_check(ac, av) == 0)
 		return (1);
 	if (stack_sorted(&a) == false)

@@ -6,38 +6,11 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:22 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/06 20:13:47 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/14 13:49:16 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-// int	check_arg(int ac)
-// {
-// 	if (ac == 1)
-// 	{
-// 		printf("Error\n");
-// 		return (1);
-// 	}
-// 	else
-// 		return (0);
-// }
-
-int	count_args(int ac, char **av)
-{
-	int	i;
-	int	count;
-
-	i = 1;
-	count = 0;
-	while (i < ac)
-	{
-		if (check_int(av[i]) == 1)
-			count++;
-		i++;
-	}
-	return (count);
-}
 
 int	check_double(int ac, char **av)
 {
@@ -51,10 +24,7 @@ int	check_double(int ac, char **av)
 		while (j < ac)
 		{
 			if (ft_atol(av[i]) == ft_atol(av[j]))
-			{
-				ft_printf("Error\n");
 				return (0);
-			}
 			j++;
 		}
 		i++;
@@ -75,7 +45,6 @@ int	check_int(char *str)
 	{
 		if (ft_isdigit(str[i]) == 0)
 		{
-			printf("Error\n");
 			return (0);
 		}
 		i++;
@@ -99,12 +68,20 @@ int	check_int_2(int ac, char **av)
 
 int	big_check(int ac, char **av)
 {
-	if (check_double(ac, av) == 0)
+	if (ac == 1)
+	{
+		ft_printf("Error1\n");
 		return (0);
-	// else if (check_arg(ac) == 1)
-	// 	return (0);
+	}
+	else if (check_double(ac, av) == 0)
+	{
+		ft_printf("Error2\n");
+		return (0);
+	}
 	else if (check_int_2(ac, av) == 0)
+	{
+		ft_printf("Error3\n");
 		return (0);
-	else
-		return (1);
+	}
+	return (1);
 }

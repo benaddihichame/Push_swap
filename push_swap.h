@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/13 15:41:59 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/14 13:50:16 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ void	algo(t_stack **a, t_stack **b);
 
 //                              CHECKING
 int		check_double(int ac, char **av);
-int		count_args(int ac, char **av);
 int		check_int(char *str);
-int		check_arg(int ac);
 bool	stack_sorted(t_stack **box);
 int		big_check(int ac, char **av);
 
