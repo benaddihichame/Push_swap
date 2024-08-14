@@ -37,6 +37,8 @@ int	check_int(char *str)
 	int	i;
 
 	i = 0;
+	if (str == NULL)
+		return 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	if (str[i] == '\0')
@@ -57,6 +59,8 @@ int	check_int_2(int ac, char **av)
 	int	i;
 
 	i = 1;
+	if (ac == i)
+		return 1;
 	while (i < ac)
 	{
 		if (check_int(av[i]) == 0)
@@ -70,7 +74,7 @@ int	big_check(int ac, char **av)
 {
 	if (ac == 1)
 	{
-		ft_printf("Error1\n");
+		ft_printf("Error\n");
 		return (0);
 	}
 	else if (check_double(ac, av) == 0)

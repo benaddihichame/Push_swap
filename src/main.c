@@ -12,24 +12,41 @@
 
 #include "../push_swap.h"
 
+static void	free_split(char **tab, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+		free(tab[i++]);
+	free(tab);
+}
+
+
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
-	char **split_args;
+
 	a = NULL;
 	b = NULL;
 	if (ac == 2)
-    {
-        split_args = ft_split(av[1], ' ');
-        if (!split_args)
-            return (1);
-        init_stack(&a, split_args);
+	{
+		av = ft_split(av[1], ' ');
+		if (!av)
+			return (1);
+		init_stack(&a, av);
 	}
-	else
+	if (ac > 2)
 		init_stack(&a, av + 1);
+	else
+		return 0 ;
 	if (big_check(ac, av) == 0)
+	{
+		free_all(&a);
+		free_split(av, 2);
 		return (1);
+	}
 	if (stack_sorted(&a) == false)
 	{
 		if (mod_len(&a) == 2)
@@ -39,6 +56,8 @@ int	main(int ac, char **av)
 		else
 			algo(&a, &b);
 	}
+	if(ac == 2)
+		free_split(av, 3);
 	free_all(&a);
 	return (0);
 }

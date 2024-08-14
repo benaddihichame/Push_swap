@@ -26,7 +26,7 @@ void	init_stack(t_stack **a, char **av)
 			free_all(a);
 			return ;
 		}
-		add_node(a, (int)num);
+		add_node(a, num);
 		i++;
 	}
 }

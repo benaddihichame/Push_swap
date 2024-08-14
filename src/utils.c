@@ -24,11 +24,11 @@ long	ft_atol(const char *s)
 		s++;
 	if (*s == '+' || *s == '-')
 	{
-		if (sign == '-')
+		if (*s == '-')
 			sign = -1;
 		s++;
 	}
-	while (ft_isdigit(*s))
+	while (*s >= '0' && *s <= '9')
 	{
 		result = result * 10 + (*s - '0');
 		s++;
