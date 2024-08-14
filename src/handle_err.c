@@ -12,16 +12,16 @@
 
 #include "../push_swap.h"
 
-int	check_arg(int ac)
-{
-	if (ac == 1)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	else
-		return (0);
-}
+// int	check_arg(int ac)
+// {
+// 	if (ac == 1)
+// 	{
+// 		printf("Error\n");
+// 		return (1);
+// 	}
+// 	else
+// 		return (0);
+// }
 
 int	count_args(int ac, char **av)
 {
@@ -101,8 +101,8 @@ int	big_check(int ac, char **av)
 {
 	if (check_double(ac, av) == 0)
 		return (0);
-	else if (check_arg(ac) == 1)
-		return (0);
+	// else if (check_arg(ac) == 1)
+	// 	return (0);
 	else if (check_int_2(ac, av) == 0)
 		return (0);
 	else

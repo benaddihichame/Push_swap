@@ -24,6 +24,7 @@ void	init_stack(t_stack **a, char **av)
 		if (num > INT_MAX || num < INT_MIN)
 		{
 			free_all(a);
+			return ;
 		}
 		add_node(a, (int)num);
 		i++;
