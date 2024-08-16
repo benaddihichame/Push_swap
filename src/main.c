@@ -31,16 +31,12 @@ void sort_stack(t_stack **a, t_stack **b)
 {
     if (stack_sorted(a))
         return;
-    
     if (mod_len(a) == 2)
         sa(a);
     else if (mod_len(a) == 3)
         three_node(a);
     else
         algo(a, b);
-    
-    while (!stack_sorted(a))
-        rra(a);
 }
 
 void before_start(int ac, char **av)
@@ -62,13 +58,16 @@ void before_start(int ac, char **av)
     if (!big_check(ac, av))
     {
         free_all(&a);
+        free_split(av);
         ft_printf("Error\n");
         return ;
     }
     sort_stack(&a, &b);
-    free_split(av);
+    if(ac == 2)
+        free_split(av);
     free_all(&a);
 }
+
 int	main(int ac, char **av)
 {
 	if(ac == 1)
@@ -76,3 +75,4 @@ int	main(int ac, char **av)
 	before_start(ac, av);
 	return (0);
 }
+  
