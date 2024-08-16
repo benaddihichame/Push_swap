@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/14 13:50:16 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/15 20:05:13 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		check_double(int ac, char **av);
 int		check_int(char *str);
 bool	stack_sorted(t_stack **box);
 int		big_check(int ac, char **av);
-
+void before_start(int ac, char **av);
 //                              PUSH
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);

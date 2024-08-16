@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:22 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/14 13:49:16 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/15 02:23:41 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,8 @@ int	one(int ac)
 int	big_check(int ac, char **av)
 {
 	if (check_double(ac, av) == 0)
-	{
-		ft_printf("Error2\n");
 		return (0);
-	}
 	else if (check_int_2(ac, av) == 0)
-	{
-		ft_printf("Error3\n");
 		return (0);
-	}
 	return (1);
 }
