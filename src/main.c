@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 02:06:37 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/15 20:09:20 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/16 21:14:54 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,11 @@ void before_start(int ac, char **av)
     if (ac == 2)
     {
         av = ft_split(av[1], ' ');
-        if (!av)
+        if (!av || !av[0])
+        {
+            free_split(av);
 			return ;
+        }
         init_stack(&a, av);
     }
     else
@@ -58,7 +61,8 @@ void before_start(int ac, char **av)
     if (!big_check(ac, av))
     {
         free_all(&a);
-        free_split(av);
+        if (ac == 2)
+            free_split(av);
         ft_printf("Error\n");
         return ;
     }
@@ -75,4 +79,3 @@ int	main(int ac, char **av)
 	before_start(ac, av);
 	return (0);
 }
-  
