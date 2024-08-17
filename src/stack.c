@@ -3,33 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 19:10:11 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/16 21:30:43 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/17 22:49:48 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	init_stack(t_stack **a, char **av)
-{
-	long	num;
-	int		i;
-
-	i = 0;
-	while (av[i])
-	{
-		num = ft_atol(av[i]);
-		if (num > INT_MAX || num < INT_MIN)
-		{
-			free_all(a);
-			return ;
-		}
-		add_node(a, (int)num);
-		i++;
-	}
-}
 
 bool	stack_sorted(t_stack **box)
 {

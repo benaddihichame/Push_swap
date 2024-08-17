@@ -6,18 +6,18 @@
 #    By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 20:30:15 by hbenaddi          #+#    #+#              #
-#    Updated: 2024/08/06 13:53:19 by hbenaddi         ###   ########.fr        #
+#    Updated: 2024/08/17 22:49:45 by hbenaddi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -Iinclude -g3
+CFLAGS = -Wall -Werror -Wextra -Iinclude -fsanitize=address -g3
 NAME = push_swap
 SRC_DIR = src
 OBJ_DIR = obj
 CMD_DIR = cmd
 
-SRCS = $(SRC_DIR)/handle_err.c \
+SRCS = $(SRC_DIR)/init.c \
 			$(SRC_DIR)/main.c \
 			$(SRC_DIR)/3reverse.c \
 			$(SRC_DIR)/1rotate.c \
@@ -31,7 +31,7 @@ SRCS = $(SRC_DIR)/handle_err.c \
 
 
 
-OBJS = $(OBJ_DIR)/handle_err.o \
+OBJS = $(OBJ_DIR)/init.o \
 			$(OBJ_DIR)/3reverse.o \
 			$(OBJ_DIR)/1rotate.o \
 			$(OBJ_DIR)/2push.o \

@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 02:06:37 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/17 12:08:09 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/17 23:20:41 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,25 @@ int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
+	char	**args;
+	int		free_args;
 
 	a = NULL;
 	b = NULL;
+	free_args = 0;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
-	else if(ac == 2)
+	else if (ac == 2)
 	{
-		av = ft_split(av[1], ' ');
+		args = ft_split(av[1], ' ');
+		free_args = 1;
 	}
-	init_stack(&a, av);
+	else
+		args = av + 1;
+	init_stack(&a, args);
 	sort_stack(&a, &b);
-	if (ac == 2)
-		free_split(av);
+	if (free_args)
+		free_split(args);
 	free_all(&a);
 	return (0);
 }
