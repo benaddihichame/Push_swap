@@ -42,7 +42,6 @@ void	init_stack(t_stack **a, char **av);
 void	add_node(t_stack **box, int n);
 void	algo(t_stack **a, t_stack **b);
 void	free_split(char **tab);
-int	one(int ac);
 
 //                              CHECKING
 int		check_double(int ac, char **av);

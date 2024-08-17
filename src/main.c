@@ -36,60 +36,50 @@ static void	sort_stack(t_stack **a, t_stack **b)
 		algo(a, b);
 }
 
-static int	handle_single_argument(char **av, t_stack **a)
-{
-	av = ft_split(av[1], ' ');
-	if (!av || !av[0])
-	{
-		free_split(av);
-		ft_printf("Error\n");
-		return (0);
-	}
-	if (!big_check(0, av))
-	{
-		free_split(av);
-		ft_printf("Error\n");
-		return (0);
-	}
-	init_stack(a, av);
-	return (1);
-}
+// static int	handle_single_argument(char **av, t_stack **a)
+// {
+// 	av = ft_split(av[1], ' ');
+// 	if (!av || !av[0])
+// 	{
+// 		free_split(av);
+// 		ft_printf("Error\n");
+// 		return (0);
+// 	}
+// 	if (!big_check(0, av))
+// 	{
+// 		free_split(av);
+// 		ft_printf("Error\n");
+// 		return (0);
+// 	}
+// 	init_stack(a, av);
+// 	return (1);
+// }
 
-static int	handle_multiple_arguments(int ac, char **av, t_stack **a)
-{
-	if (!big_check(ac, av))
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
-	init_stack(a, av + 1);
-	return (1);
-}
+// static int	handle_multiple_arguments(int ac, char **av, t_stack **a)
+// {
+// 	if (!big_check(ac, av))
+// 	{
+// 		ft_printf("Error\n");
+// 		return (0);
+// 	}
+// 	init_stack(a, av + 1);
+// 	return (1);
+// }
 
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
 
-	if (ac == 1)
-		return (0);
 	a = NULL;
 	b = NULL;
-	if (ac == 2)
-	{
-		if (handle_single_argument(av, &a) == 0)
-			return (1);
-	}
-	else if (ac > 2)
-	{
-		if (!handle_multiple_arguments(ac, av, &a))
-			return (1);
-	}
-	else
-	{
-		ft_printf("Error\n");
+	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
+	else if(ac == 2)
+	{
+		av = ft_split(av[1], ' ');
 	}
+	init_stack(&a, av);
 	sort_stack(&a, &b);
 	if (ac == 2)
 		free_split(av);

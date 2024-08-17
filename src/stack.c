@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 19:10:11 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/14 13:36:51 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/16 21:30:43 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	init_stack(t_stack **a, char **av)
 			free_all(a);
 			return ;
 		}
-		add_node(a, num);
+		add_node(a, (int)num);
 		i++;
 	}
 }
