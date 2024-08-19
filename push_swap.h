@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:54:52 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/08/15 20:05:13 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:06:17 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ long	ft_atol(const char *s);
 int		mod_len(t_stack **node);
 void	three_node(t_stack **a);
 void	free_all(t_stack **box);
-void	init_stack(t_stack **a, char **av);
+bool	init_stack(t_stack **a, char **av);
 void	add_node(t_stack **box, int n);
 void	algo(t_stack **a, t_stack **b);
 void	free_split(char **tab);
-
+int		is_numeric(char *str);
 //                              CHECKING
 int		check_double(int ac, char **av);
 int		check_int(char *str);
 bool	stack_sorted(t_stack **box);
 int		big_check(int ac, char **av);
-void before_start(int ac, char **av);
+void	before_start(int ac, char **av);
 //                              PUSH
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);

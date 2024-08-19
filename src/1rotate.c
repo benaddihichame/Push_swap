@@ -17,14 +17,14 @@ void	rb(t_stack **b)
 	t_stack	*tmp;
 	t_stack	*current;
 
-	tmp = *b;  // Stocke le premier élément de la pile b dans tmp
-	*b = tmp->next;  // Le deuxième élément devient le nouveau premier
-	tmp->next = NULL;  // Déconnecte tmp du reste de la pile
-	current = *b;  // Initialise current au nouveau premier élément
-	while (current->next)  // Parcourt la pile jusqu'au dernier élément
+	tmp = *b;
+	*b = tmp->next;
+	tmp->next = NULL;
+	current = *b;
+	while (current->next)
 		current = current->next;
-	current->next = tmp;  // Connecte l'ancien premier élément à la fin
-	ft_printf("rb\n");  // Affiche l'opération effectuée
+	current->next = tmp;
+	ft_printf("rb\n");
 }
 
 void	ra(t_stack **a)
@@ -32,12 +32,12 @@ void	ra(t_stack **a)
 	t_stack	*tmp;
 	t_stack	*current;
 
-	tmp = *a;  // Stocke le premier élément de la pile a dans tmp
-	*a = tmp->next;  // Le deuxième élément devient le nouveau premier
-	tmp->next = NULL;  // Déconnecte tmp du reste de la pile
-	current = *a;  // Initialise current au nouveau premier élément
-	while (current->next)  // Parcourt la pile jusqu'au dernier élément
+	tmp = *a;
+	*a = tmp->next;
+	tmp->next = NULL;
+	current = *a;
+	while (current->next)
 		current = current->next;
-	current->next = tmp;  // Connecte l'ancien premier élément à la fin
-	ft_printf("ra\n");  // Affiche l'opération effectuée
+	current->next = tmp;
+	ft_printf("ra\n");
 }

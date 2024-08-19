@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -Iinclude -fsanitize=address -g3
+CFLAGS = -Wall -Werror -Wextra -Iinclude  -g3
 NAME = push_swap
 SRC_DIR = src
 OBJ_DIR = obj
